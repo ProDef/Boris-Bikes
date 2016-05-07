@@ -8,14 +8,22 @@ def initialize
 end
 
 def release_bike
-	fail "No bikes available" if @bikes.empty?
-	@bikes.pop
+	@bikes.pop unless empty?
 end
 
 def dock(bike)
-	fail "at capacity" if @bikes.count >= 20
-	@bikes << bike 
+	@bikes << bike unless full?
 end
 
 
+end
+
+private 
+
+def full?
+	fail "at capacity" if @bikes.count >= 20
+end
+
+def empty?
+	fail "No bikes available" if @bikes.empty?
 end
