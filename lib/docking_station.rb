@@ -23,7 +23,6 @@ def dock(bike)
 	@bikes << bike
 end
 
-
 private 
 
 
