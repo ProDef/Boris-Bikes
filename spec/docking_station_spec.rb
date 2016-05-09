@@ -5,7 +5,7 @@ describe DockingStation do
 
 	it { is_expected.to respond_to :release_bike}
 	it { is_expected.to respond_to(:dock).with(1).argument }
-	it { is_expected.to respond_to (:bike)}
+	it { is_expected.to respond_to :bike}
 
 	describe "#release bike" do
 		it "releases a working bike" do 
@@ -34,7 +34,6 @@ end
 		end
 end
 
-
 	describe "#initialization" do 
 		subject { DockingStation.new }
 		let(:bike) { Bike.new }
@@ -42,9 +41,14 @@ end
 			described_class::DEFAULT_CAPACITY.times do 
 			subject.dock(bike)
 		end
-			expect{ subject.dock(bike) }.to raise_error 'at capacity'
+			expect{ subject.dock(bike) }.to raise_error ('at capacity')
 	end
 end
 
-
 end
+
+
+
+
+
+

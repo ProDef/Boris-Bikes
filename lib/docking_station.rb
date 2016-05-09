@@ -25,8 +25,6 @@ end
 
 private 
 
-
-
 def full?
 	@bikes.count >= capacity
 end
